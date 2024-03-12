@@ -1,0 +1,30 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='../styles/output.css' rel='stylesheet')
+  script(type='text/javascript' src='../scripts/index.js' defer='')
+  title Triangle App
+.p-3(class='md:p-16')
+  .flex-center.p-8.group-exercise Group exercise
+  .flex-responsive(class='md:h-[40vh]')
+    .h-full.flex-center.bg-violet-200.p-4.border-solid.border-2.border-black(class='basis-1/2')
+      .flex-center.p-2.text-3xl Enter the length of sides
+      form.flex-center.flex-col.gap-2.flex-wrap
+        .side
+          label.side-label(for='sideA') Side 1
+          input#sideA.input-side(type='text' name='sideA')
+          // min="0" max="1000" step="0.000001"
+        .side
+          label.side-label(for='sideB') Side 2
+          input#sideB.input-side(type='text' name='sideB')
+        .side
+          label.side-label(for='sideC') Side 3
+          input#sideC.input-side(type='text' name='sideC')
+        .side
+          .side-label
+          h3.side-label Result
+        .output
+          button#calculateButton.text-2xl.textbox-bg.cursor-pointer(onclick='calculateTriangleTypes(event)') Enter
+          #result.input-side.min-h-7
+    img.w-full.h-full.object-contain(class='basis-1/2' src='../images/triangle.png' alt='Triangle Types')

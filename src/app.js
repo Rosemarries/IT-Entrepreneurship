@@ -3,9 +3,16 @@ const path = require('path');
 const app = express()
 const port = 3000
 
-app.set('views', path.join(__dirname, 'public', 'views'))
+app.engine('pug', require('pug').__express)
 app.set('view engine', 'pug')
-app.use(express.static(path.join(__dirname, 'public')))
+if (process.env.NODE_ENV === 'production') {
+  app.set('views', path.join(__dirname, '../', 'views'))
+  app.use(express.static(path.join(__dirname, '../', 'public')))
+}
+else {
+  app.set('views', path.join(__dirname, 'views'))
+  app.use(express.static(path.join(__dirname, 'public')))
+}
 
 app.get('/', function(req,res) {
   res.render('index')

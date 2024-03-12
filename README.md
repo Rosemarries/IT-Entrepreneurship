@@ -8,4 +8,7 @@ IT Entrepreneurship and Management (01076422), Computer Engineering 60 at KMITL.
 ```
 npm start
 npm sun tailwind:css
+
+npm run build
+npm run prod
 ```

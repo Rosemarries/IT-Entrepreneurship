@@ -3,7 +3,7 @@
     "builds": [
       {
         "src": "./src/app.js",
-        "use": "@now/node"
+        "use": "@vercel/node"
       }
     ],
     "routes": [
@@ -11,10 +11,6 @@
         "src": "/(.*)",
         "dest": "./src/views/index.pug"
       }
-    ],
-    "framework": {
-      "name": "now",
-      "version": "0.25.1"
-    }
-  }
+    ]
+}
   

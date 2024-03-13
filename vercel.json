@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
         {
-            "src": "src/app.js",
+            "src": "./src/app.js",
             "use": "@now/node"
         }
     ],
-    "rewrites": [
-        { 
-            "source": "/(.*)", 
-            "destination": "/api" 
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
         }
     ]
   }
